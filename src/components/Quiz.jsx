@@ -12,14 +12,14 @@ export default function Quiz() {
 	const handleSelectAnswer = useCallback(
 		function handleSelectAnswer(selectedAnswer) {
 			setUserAnswers((prevUserAnswers) => {
-				return [...userAnswers, selectedAnswer];
+				return [...prevUserAnswers, selectedAnswer];
 			});
 		},
 		[]
 	);
 
 	const handleSkipAnswer = useCallback(() => {
-		handleSelectAnswer(null);
+		handleSelectAnswer(null)
 	}, [handleSelectAnswer]);
 
 	if (quizIsComplete) {
